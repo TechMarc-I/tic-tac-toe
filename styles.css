@@ -1,0 +1,46 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  background: grey;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  height: 30rem;
+  margin: 5rem auto;
+  width: 30rem;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.cell:hover {
+  cursor: pointer;
+  background: lightgrey;
+}
+
+#a1,
+#a2,
+#b1,
+#b2 {
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+#a3,
+#b3 {
+  border-right: 2px solid black;
+}
+
+#c1,
+#c2 {
+  border-bottom: 2px solid black;
+}
