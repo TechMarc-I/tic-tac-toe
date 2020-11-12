@@ -2,7 +2,7 @@
     // Create win count variables for x and o
     let x_wins = 0;
     let o_wins = 0;
-    // Create querySelector for score div
+    // Create querySelector for score ul
     let score = document.querySelector('#score');
     // Create querySelector for x wins and o wins
     let x_score = document.querySelector('#x_score');
@@ -11,8 +11,8 @@
     // Place current scores in score board 
     // Create score board function; 
     const scoreBoard = () => {
-        x_score.textContent = `X Wins: ${x_wins}`;
-        o_score.textContent = `O Wins: ${o_wins}`; 
+        x_score.innerHTML = `X Wins: ${x_wins}`;
+        o_score.innerHTML = `O Wins: ${o_wins}`; 
     };
 
 // Create a function for start of game
