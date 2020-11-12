@@ -6,7 +6,7 @@ let startPlayer;
 const playerTurn = () => {
     // If number = 0, O is up; If number = 1, X is up
     startPlayer == 0 ? player = "O" : player = "X"; 
-    console.log(player);
+    //console.log(player);
 }
 
 
@@ -38,7 +38,7 @@ a1.addEventListener('click', function () {
     };
 
     playerTurn();
-    console.log(startPlayer);
+    //console.log(startPlayer);
 
     a1.style.pointerEvents = 'none';
 })
@@ -53,7 +53,7 @@ a2.addEventListener('click', function () {
     };
 
     playerTurn();
-    console.log(startPlayer);
+    //console.log(startPlayer);
 
     a2.style.pointerEvents = 'none';
 })
@@ -68,7 +68,7 @@ a3.addEventListener('click', function () {
     };
 
     playerTurn();
-    console.log(startPlayer);
+    //console.log(startPlayer);
 
     a3.style.pointerEvents = 'none';
 })
@@ -83,7 +83,7 @@ b1.addEventListener('click', function () {
     };
 
     playerTurn();
-    console.log(startPlayer);
+    //console.log(startPlayer);
 
     b1.style.pointerEvents = 'none';
 })
@@ -98,7 +98,7 @@ b2.addEventListener('click', function () {
     };
 
     playerTurn();
-    console.log(startPlayer);
+    //console.log(startPlayer);
 
     b2.style.pointerEvents = 'none';
 })
@@ -113,9 +113,54 @@ b3.addEventListener('click', function () {
     };
 
     playerTurn();
-    console.log(startPlayer);
+    //console.log(startPlayer);
 
     b3.style.pointerEvents = 'none';
+})
+// C1
+c1.addEventListener('click', function () {
+    c1.textContent = player; 
+
+    if (startPlayer === 0) {
+        startPlayer += 1;
+    } else {
+        startPlayer -= 1;
+    };
+
+    playerTurn();
+    //console.log(startPlayer);
+
+    c1.style.pointerEvents = 'none';
+})
+// C2
+c2.addEventListener('click', function () {
+    c2.textContent = player; 
+
+    if (startPlayer === 0) {
+        startPlayer += 1;
+    } else {
+        startPlayer -= 1;
+    };
+
+    playerTurn();
+    //console.log(startPlayer);
+
+    c2.style.pointerEvents = 'none';
+})
+// C3
+c3.addEventListener('click', function () {
+    c3.textContent = player; 
+
+    if (startPlayer === 0) {
+        startPlayer += 1;
+    } else {
+        startPlayer -= 1;
+    };
+
+    playerTurn();
+    //console.log(startPlayer);
+
+    c3.style.pointerEvents = 'none';
 })
 
 
@@ -145,12 +190,12 @@ const start = () => {
     // Create random number generator, generate num between 0 and 1
     // Store randomly generated number in starting player variable
     startPlayer = Math.round(Math.random() * 1);
-    console.log(startPlayer);
+    //console.log(startPlayer);
 
     //call playerTurn function
     // If number = 0, O is up; If number = 1, X is up
     startPlayer == 0 ? player = "O" : player = "X"; 
-    console.log(player);
+    //console.log(player);
 
     // Call scoreBoard Function 
     scoreBoard();
