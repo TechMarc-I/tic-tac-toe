@@ -5,7 +5,7 @@ let startPlayer;
 // create function to update current player
 const playerTurn = () => {
     // If number = 0, O is up; If number = 1, X is up
-    startPlayer == 0 ? player = "O" : player = "X"; 
+    startPlayer == 0 ? player = "O" : player = "X";
     //console.log(player);
 }
 
@@ -29,7 +29,7 @@ let c3 = document.querySelector('#c3');
 // after x or o appears, ready up next letter
 // A1
 a1.addEventListener('click', function () {
-    a1.textContent = player; 
+    a1.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -41,10 +41,12 @@ a1.addEventListener('click', function () {
     //console.log(startPlayer);
 
     a1.style.pointerEvents = 'none';
+
+    win();
 })
 // A2
 a2.addEventListener('click', function () {
-    a2.textContent = player; 
+    a2.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -56,10 +58,12 @@ a2.addEventListener('click', function () {
     //console.log(startPlayer);
 
     a2.style.pointerEvents = 'none';
+
+    win();
 })
 // A3
 a3.addEventListener('click', function () {
-    a3.textContent = player; 
+    a3.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -71,10 +75,12 @@ a3.addEventListener('click', function () {
     //console.log(startPlayer);
 
     a3.style.pointerEvents = 'none';
+
+    win();
 })
 // B1
 b1.addEventListener('click', function () {
-    b1.textContent = player; 
+    b1.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -86,10 +92,12 @@ b1.addEventListener('click', function () {
     //console.log(startPlayer);
 
     b1.style.pointerEvents = 'none';
+
+    win();
 })
 // B2
 b2.addEventListener('click', function () {
-    b2.textContent = player; 
+    b2.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -101,10 +109,12 @@ b2.addEventListener('click', function () {
     //console.log(startPlayer);
 
     b2.style.pointerEvents = 'none';
+
+    win();
 })
 // B3
 b3.addEventListener('click', function () {
-    b3.textContent = player; 
+    b3.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -116,10 +126,12 @@ b3.addEventListener('click', function () {
     //console.log(startPlayer);
 
     b3.style.pointerEvents = 'none';
+
+    win();
 })
 // C1
 c1.addEventListener('click', function () {
-    c1.textContent = player; 
+    c1.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -131,10 +143,12 @@ c1.addEventListener('click', function () {
     //console.log(startPlayer);
 
     c1.style.pointerEvents = 'none';
+
+    win();
 })
 // C2
 c2.addEventListener('click', function () {
-    c2.textContent = player; 
+    c2.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -146,10 +160,12 @@ c2.addEventListener('click', function () {
     //console.log(startPlayer);
 
     c2.style.pointerEvents = 'none';
+
+    win();
 })
 // C3
 c3.addEventListener('click', function () {
-    c3.textContent = player; 
+    c3.textContent = player;
 
     if (startPlayer === 0) {
         startPlayer += 1;
@@ -161,10 +177,78 @@ c3.addEventListener('click', function () {
     //console.log(startPlayer);
 
     c3.style.pointerEvents = 'none';
+
+    win();
 })
 
 
+// Created a function called win that goes through each possible win combination for X and O //
+// If cells a1, a2, a3 are "X", player x wins, etc.. //
+const win = function() {
+  // Column A //
+  if (a1.textContent === "X" && a2.textContent === "X" && a3.textContent === "X") {
+    alert("Player X has won.");
+  }
+  if (a1.textContent === "O" && a2.textContent === "O" && a3.textContent === "O") {
+    alert("Player O has won.");
+  }
 
+  // Column B //
+  if (b1.textContent === "X" && b2.textContent === "X" && b3.textContent === "X") {
+    alert("Player X has won.");
+  }
+  if (b1.textContent === "O" && b2.textContent === "O" && b3.textContent === "O") {
+    alert("Player O has won.");
+  }
+
+  // Column C //
+  if (c1.textContent === "X" && c2.textContent === "X" && c3.textContent === "X") {
+    alert("Player X has won.");
+  }
+  if (c1.textContent === "O" && c2.textContent === "O" && c3.textContent === "O") {
+    alert("Player O has won.");
+  }
+
+  // Row 1 //
+  if (a1.textContent === "X" && b1.textContent === "X" && c1.textContent === "X") {
+    alert("Player X has won.");
+  }
+  if (a1.textContent === "O" && b1.textContent === "O" && c1.textContent === "O") {
+    alert("Player O has won.");
+  }
+
+  // Row 2 //
+  if (a2.textContent === "X" && b2.textContent === "X" && c2.textContent === "X") {
+    alert("Player X has won.");
+  }
+  if (a2.textContent === "O" && b2.textContent === "O" && c2.textContent === "O") {
+    alert("Player O has won.");
+  }
+
+  // Row 3 //
+  if (a3.textContent === "X" && b3.textContent === "X" && c3.textContent === "X") {
+    alert("Player X has won.");
+  }
+  if (a3.textContent === "O" && b3.textContent === "O" && c3.textContent === "O") {
+    alert("Player O has won.");
+  }
+
+  // Diagonal a1, b2, c3 //
+  if (a1.textContent === "X" && b2.textContent === "X" && c3.textContent === "X") {
+    alert("Player X has won.");
+  }
+  if (a1.textContent === "O" && b2.textContent === "O" && c3.textContent === "O") {
+    alert("Player O has won.");
+  }
+
+  // Diagonal a3, b2, c1 //
+  if (a3.textContent === "X" && b2.textContent === "X" && c1.textContent === "X") {
+    alert("Player X has won.");
+  }
+  if (a3.textContent === "O" && b2.textContent === "O" && c1.textContent === "O") {
+    alert("Player O has won.");
+  }
+};
 
 
 // Create win counter
@@ -177,16 +261,16 @@ c3.addEventListener('click', function () {
     let x_score = document.querySelector('#x_score');
     let o_score = document.querySelector('#o_score');
 
-    // Place current scores in score board 
-    // Create score board function; 
+    // Place current scores in score board
+    // Create score board function;
     const scoreBoard = () => {
         x_score.innerHTML = `X Wins: ${x_wins}`;
-        o_score.innerHTML = `O Wins: ${o_wins}`; 
+        o_score.innerHTML = `O Wins: ${o_wins}`;
     };
 
 // Create a function for start of game
 const start = () => {
-    // Create Starting Player Variable 
+    // Create Starting Player Variable
     // Create random number generator, generate num between 0 and 1
     // Store randomly generated number in starting player variable
     startPlayer = Math.round(Math.random() * 1);
@@ -194,10 +278,10 @@ const start = () => {
 
     //call playerTurn function
     // If number = 0, O is up; If number = 1, X is up
-    startPlayer == 0 ? player = "O" : player = "X"; 
+    startPlayer == 0 ? player = "O" : player = "X";
     //console.log(player);
 
-    // Call scoreBoard Function 
+    // Call scoreBoard Function
     scoreBoard();
 };
 
