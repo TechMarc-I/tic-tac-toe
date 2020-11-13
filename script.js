@@ -2,6 +2,24 @@
 let player;
 let startPlayer;
 
+// Create win counter
+    // Create win count variables for x and o
+    let x_wins = 0;
+    let o_wins = 0;
+    // Create querySelector for score ul
+    let score = document.querySelector('#score');
+    // Create querySelector for x wins and o wins
+    let x_score = document.querySelector('#x_score');
+    let o_score = document.querySelector('#o_score');
+
+// Place current scores in score board
+  // Create score board function;
+  const scoreBoard = () => {
+    x_score.innerHTML = `X Wins: ${x_wins}`;
+    o_score.innerHTML = `O Wins: ${o_wins}`;
+};
+
+
 // create function to update current player
 const playerTurn = () => {
     // If number = 0, O is up; If number = 1, X is up
@@ -190,100 +208,114 @@ const win = function() {
   if (a1.textContent === "X" && a2.textContent === "X" && a3.textContent === "X") {
     alert("Player X has won.");
     location.reload();
+    x_wins += 1;
+    scoreBoard();
   }
   if (a1.textContent === "O" && a2.textContent === "O" && a3.textContent === "O") {
     alert("Player O has won.");
     location.reload();
+    o_wins += 1
+    scoreBoard();
   }
 
   // Column B //
   if (b1.textContent === "X" && b2.textContent === "X" && b3.textContent === "X") {
     alert("Player X has won.");
     location.reload();
+    x_wins += 1
+    scoreBoard();
   }
   if (b1.textContent === "O" && b2.textContent === "O" && b3.textContent === "O") {
     alert("Player O has won.");
     location.reload();
+    o_wins += 1
+    scoreBoard();
   }
 
   // Column C //
   if (c1.textContent === "X" && c2.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
     location.reload();
+    x_wins += 1
+    scoreBoard();
   }
   if (c1.textContent === "O" && c2.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
     location.reload();
+    o_wins += 1
+    scoreBoard();
   }
 
   // Row 1 //
   if (a1.textContent === "X" && b1.textContent === "X" && c1.textContent === "X") {
     alert("Player X has won.");
     location.reload();
+    x_wins += 1
+    scoreBoard();
   }
   if (a1.textContent === "O" && b1.textContent === "O" && c1.textContent === "O") {
     alert("Player O has won.");
     location.reload();
+    o_wins += 1
+    scoreBoard();
   }
 
   // Row 2 //
   if (a2.textContent === "X" && b2.textContent === "X" && c2.textContent === "X") {
     alert("Player X has won.");
     location.reload();
+    x_wins += 1
+    scoreBoard();
   }
   if (a2.textContent === "O" && b2.textContent === "O" && c2.textContent === "O") {
     alert("Player O has won.");
     location.reload();
+    o_wins += 1
+    scoreBoard();
   }
 
   // Row 3 //
   if (a3.textContent === "X" && b3.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
     location.reload();
+    x_wins += 1
+    scoreBoard();
   }
   if (a3.textContent === "O" && b3.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
     location.reload();
+    o_wins += 1
+    scoreBoard();
   }
 
   // Diagonal a1, b2, c3 //
   if (a1.textContent === "X" && b2.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
     location.reload();
+    x_wins += 1
+    scoreBoard();
   }
   if (a1.textContent === "O" && b2.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
     location.reload();
+    o_wins += 1
+    scoreBoard();
   }
 
   // Diagonal a3, b2, c1 //
   if (a3.textContent === "X" && b2.textContent === "X" && c1.textContent === "X") {
     alert("Player X has won.");
     location.reload();
+    x_wins += 1
+    scoreBoard();
   }
   if (a3.textContent === "O" && b2.textContent === "O" && c1.textContent === "O") {
     alert("Player O has won.");
     location.reload();
+    o_wins += 1
+    scoreBoard();
   }
 };
-
-
-// Create win counter
-    // Create win count variables for x and o
-    let x_wins = 0;
-    let o_wins = 0;
-    // Create querySelector for score ul
-    let score = document.querySelector('#score');
-    // Create querySelector for x wins and o wins
-    let x_score = document.querySelector('#x_score');
-    let o_score = document.querySelector('#o_score');
-
-    // Place current scores in score board
-    // Create score board function;
-    const scoreBoard = () => {
-        x_score.innerHTML = `X Wins: ${x_wins}`;
-        o_score.innerHTML = `O Wins: ${o_wins}`;
-    };
 
 // Create a function for start of game
 const start = () => {
