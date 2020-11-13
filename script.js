@@ -30,6 +30,9 @@ const playerTurn = () => {
 // QuerySelector for reset button
 let reset = document.querySelector('#reset');
 
+// QuerySelector for winner paragraph
+let declare = document.querySelector('#declareWinner');
+
 
 // Variables to track each indiviual div
 // Column A
@@ -44,6 +47,23 @@ let b3 = document.querySelector('#b3');
 let c1 = document.querySelector('#c1');
 let c2 = document.querySelector('#c2');
 let c3 = document.querySelector('#c3');
+
+// X Wins Function 
+const xWinner = () => {
+  declare.textContent = "Player X has won.";
+  x_wins += 1;
+  scoreBoard();
+  reset.disabled=false;
+}
+
+// O Wins Function 
+const oWinner = () => {
+  declare.textContent = "Player O has won.";
+  o_wins += 1;
+  scoreBoard();
+  reset.disabled=false;
+}
+
 
 // Create click events to place either x or o
 // on click, either an x or an o should appear in div
@@ -202,137 +222,72 @@ c3.addEventListener('click', function () {
     win();
 })
 
-
 // Created a function called win that goes through each possible win combination for X and O //
 // If cells a1, a2, a3 are "X", player x wins, etc.. //
 // Added location.reload(); which reloads page after win //
 const win = function() {
   // Column A //
   if (a1.textContent === "X" && a2.textContent === "X" && a3.textContent === "X") {
-    alert("Player X has won.");
-    //location.reload();
-    x_wins += 1;
-    scoreBoard();
-    reset.disabled=false;
+    xWinner();
   }
   if (a1.textContent === "O" && a2.textContent === "O" && a3.textContent === "O") {
-    alert("Player O has won.");
-    //location.reload();
-    o_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    oWinner();
   }
 
   // Column B //
   if (b1.textContent === "X" && b2.textContent === "X" && b3.textContent === "X") {
-    alert("Player X has won.");
-    //location.reload();
-    x_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    xWinner();
   }
   if (b1.textContent === "O" && b2.textContent === "O" && b3.textContent === "O") {
-    alert("Player O has won.");
-    //location.reload();
-    o_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    oWinner();
   }
 
   // Column C //
   if (c1.textContent === "X" && c2.textContent === "X" && c3.textContent === "X") {
-    alert("Player X has won.");
-    //location.reload();
-    x_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    xWinner();
   }
   if (c1.textContent === "O" && c2.textContent === "O" && c3.textContent === "O") {
-    alert("Player O has won.");
-    //location.reload();
-    o_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    oWinner();
   }
 
   // Row 1 //
   if (a1.textContent === "X" && b1.textContent === "X" && c1.textContent === "X") {
-    alert("Player X has won.");
-    //location.reload();
-    x_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    xWinner();
   }
   if (a1.textContent === "O" && b1.textContent === "O" && c1.textContent === "O") {
-    alert("Player O has won.");
-    //location.reload();
-    o_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    oWinner();
   }
 
   // Row 2 //
   if (a2.textContent === "X" && b2.textContent === "X" && c2.textContent === "X") {
-    alert("Player X has won.");
-    //location.reload();
-    x_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    xWinner();
   }
   if (a2.textContent === "O" && b2.textContent === "O" && c2.textContent === "O") {
-    alert("Player O has won.");
-    //location.reload();
-    o_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    oWinner();
   }
 
   // Row 3 //
   if (a3.textContent === "X" && b3.textContent === "X" && c3.textContent === "X") {
-    alert("Player X has won.");
-    //location.reload();
-    x_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    xWinner();
   }
   if (a3.textContent === "O" && b3.textContent === "O" && c3.textContent === "O") {
-    alert("Player O has won.");
-    //location.reload();
-    o_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    oWinner();
   }
 
   // Diagonal a1, b2, c3 //
   if (a1.textContent === "X" && b2.textContent === "X" && c3.textContent === "X") {
-    alert("Player X has won.");
-    //location.reload();
-    x_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    xWinner();
   }
   if (a1.textContent === "O" && b2.textContent === "O" && c3.textContent === "O") {
-    alert("Player O has won.");
-    //location.reload();
-    o_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    oWinner();
   }
 
   // Diagonal a3, b2, c1 //
   if (a3.textContent === "X" && b2.textContent === "X" && c1.textContent === "X") {
-    alert("Player X has won.");
-    //location.reload();
-    x_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    xWinner();
   }
   if (a3.textContent === "O" && b2.textContent === "O" && c1.textContent === "O") {
-    alert("Player O has won.");
-    //location.reload();
-    o_wins += 1
-    scoreBoard();
-    reset.disabled=false;
+    oWinner();
   }
 };
 
@@ -354,10 +309,22 @@ const start = () => {
     c2.textContent = "";
     c3.textContent = "";
 
+    a1.style.pointerEvents = 'auto';
+    a2.style.pointerEvents = 'auto';
+    a3.style.pointerEvents = 'auto';
+    b1.style.pointerEvents = 'auto';
+    b2.style.pointerEvents = 'auto';
+    b3.style.pointerEvents = 'auto';
+    c1.style.pointerEvents = 'auto';
+    c2.style.pointerEvents = 'auto';
+    c3.style.pointerEvents = 'auto';
+
+    // Reset winner Paragraph
+    declare.textContent = ""; 
+
     //call playerTurn function
     // If number = 0, O is up; If number = 1, X is up
     startPlayer == 0 ? player = "O" : player = "X";
-    //console.log(player);
 
     // Call scoreBoard Function
     scoreBoard();
