@@ -61,3 +61,14 @@ body {
   padding: none;
   margin: none;
 }
+
+#resetButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#reset {
+  font-size: 20px;
+  padding: 5px;
+}

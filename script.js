@@ -27,6 +27,9 @@ const playerTurn = () => {
     //console.log(player);
 }
 
+// QuerySelector for reset button
+let reset = document.querySelector('#reset');
+
 
 // Variables to track each indiviual div
 // Column A
@@ -207,113 +210,129 @@ const win = function() {
   // Column A //
   if (a1.textContent === "X" && a2.textContent === "X" && a3.textContent === "X") {
     alert("Player X has won.");
-    location.reload();
+    //location.reload();
     x_wins += 1;
     scoreBoard();
+    reset.disabled=false;
   }
   if (a1.textContent === "O" && a2.textContent === "O" && a3.textContent === "O") {
     alert("Player O has won.");
-    location.reload();
+    //location.reload();
     o_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
 
   // Column B //
   if (b1.textContent === "X" && b2.textContent === "X" && b3.textContent === "X") {
     alert("Player X has won.");
-    location.reload();
+    //location.reload();
     x_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
   if (b1.textContent === "O" && b2.textContent === "O" && b3.textContent === "O") {
     alert("Player O has won.");
-    location.reload();
+    //location.reload();
     o_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
 
   // Column C //
   if (c1.textContent === "X" && c2.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
-    location.reload();
+    //location.reload();
     x_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
   if (c1.textContent === "O" && c2.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
-    location.reload();
+    //location.reload();
     o_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
 
   // Row 1 //
   if (a1.textContent === "X" && b1.textContent === "X" && c1.textContent === "X") {
     alert("Player X has won.");
-    location.reload();
+    //location.reload();
     x_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
   if (a1.textContent === "O" && b1.textContent === "O" && c1.textContent === "O") {
     alert("Player O has won.");
-    location.reload();
+    //location.reload();
     o_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
 
   // Row 2 //
   if (a2.textContent === "X" && b2.textContent === "X" && c2.textContent === "X") {
     alert("Player X has won.");
-    location.reload();
+    //location.reload();
     x_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
   if (a2.textContent === "O" && b2.textContent === "O" && c2.textContent === "O") {
     alert("Player O has won.");
-    location.reload();
+    //location.reload();
     o_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
 
   // Row 3 //
   if (a3.textContent === "X" && b3.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
-    location.reload();
+    //location.reload();
     x_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
   if (a3.textContent === "O" && b3.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
-    location.reload();
+    //location.reload();
     o_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
 
   // Diagonal a1, b2, c3 //
   if (a1.textContent === "X" && b2.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
-    location.reload();
+    //location.reload();
     x_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
   if (a1.textContent === "O" && b2.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
-    location.reload();
+    //location.reload();
     o_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
 
   // Diagonal a3, b2, c1 //
   if (a3.textContent === "X" && b2.textContent === "X" && c1.textContent === "X") {
     alert("Player X has won.");
-    location.reload();
+    //location.reload();
     x_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
   if (a3.textContent === "O" && b2.textContent === "O" && c1.textContent === "O") {
     alert("Player O has won.");
-    location.reload();
+    //location.reload();
     o_wins += 1
     scoreBoard();
+    reset.disabled=false;
   }
 };
 
@@ -323,7 +342,17 @@ const start = () => {
     // Create random number generator, generate num between 0 and 1
     // Store randomly generated number in starting player variable
     startPlayer = Math.round(Math.random() * 1);
-    //console.log(startPlayer);
+
+    // reset divs to empty
+    a1.textContent = "";
+    a2.textContent = "";
+    a3.textContent = "";
+    b1.textContent = "";
+    b2.textContent = "";
+    b3.textContent = ""; 
+    c1.textContent = "";
+    c2.textContent = "";
+    c3.textContent = "";
 
     //call playerTurn function
     // If number = 0, O is up; If number = 1, X is up
@@ -332,6 +361,12 @@ const start = () => {
 
     // Call scoreBoard Function
     scoreBoard();
+
+    reset.disabled = true;
 };
+
+reset.addEventListener('click', function () {
+  start();
+});
 
 start();
