@@ -184,69 +184,86 @@ c3.addEventListener('click', function () {
 
 // Created a function called win that goes through each possible win combination for X and O //
 // If cells a1, a2, a3 are "X", player x wins, etc.. //
+// Added location.reload(); which reloads page after win //
 const win = function() {
   // Column A //
   if (a1.textContent === "X" && a2.textContent === "X" && a3.textContent === "X") {
     alert("Player X has won.");
+    location.reload();
   }
   if (a1.textContent === "O" && a2.textContent === "O" && a3.textContent === "O") {
     alert("Player O has won.");
+    location.reload();
   }
 
   // Column B //
   if (b1.textContent === "X" && b2.textContent === "X" && b3.textContent === "X") {
     alert("Player X has won.");
+    location.reload();
   }
   if (b1.textContent === "O" && b2.textContent === "O" && b3.textContent === "O") {
     alert("Player O has won.");
+    location.reload();
   }
 
   // Column C //
   if (c1.textContent === "X" && c2.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
+    location.reload();
   }
   if (c1.textContent === "O" && c2.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
+    location.reload();
   }
 
   // Row 1 //
   if (a1.textContent === "X" && b1.textContent === "X" && c1.textContent === "X") {
     alert("Player X has won.");
+    location.reload();
   }
   if (a1.textContent === "O" && b1.textContent === "O" && c1.textContent === "O") {
     alert("Player O has won.");
+    location.reload();
   }
 
   // Row 2 //
   if (a2.textContent === "X" && b2.textContent === "X" && c2.textContent === "X") {
     alert("Player X has won.");
+    location.reload();
   }
   if (a2.textContent === "O" && b2.textContent === "O" && c2.textContent === "O") {
     alert("Player O has won.");
+    location.reload();
   }
 
   // Row 3 //
   if (a3.textContent === "X" && b3.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
+    location.reload();
   }
   if (a3.textContent === "O" && b3.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
+    location.reload();
   }
 
   // Diagonal a1, b2, c3 //
   if (a1.textContent === "X" && b2.textContent === "X" && c3.textContent === "X") {
     alert("Player X has won.");
+    location.reload();
   }
   if (a1.textContent === "O" && b2.textContent === "O" && c3.textContent === "O") {
     alert("Player O has won.");
+    location.reload();
   }
 
   // Diagonal a3, b2, c1 //
   if (a3.textContent === "X" && b2.textContent === "X" && c1.textContent === "X") {
     alert("Player X has won.");
+    location.reload();
   }
   if (a3.textContent === "O" && b2.textContent === "O" && c1.textContent === "O") {
     alert("Player O has won.");
+    location.reload();
   }
 };
 
